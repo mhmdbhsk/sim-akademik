@@ -1,11 +1,12 @@
-import { Header, Sidebar } from '@components';
 import { Fragment, useState } from 'react';
 import { useBreakpointValue, Box } from '@chakra-ui/react';
+import { Sidebar, Header } from '@components/modules';
+import { Container } from '@components/layouts';
 
 const smVariant = { navigation: 'drawer', navigationButton: true };
 const mdVariant = { navigation: 'sidebar', navigationButton: false };
 
-const Container = ({ children }) => {
+const Dashboard = ({ children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const variants = useBreakpointValue({ base: smVariant, md: mdVariant });
 
@@ -28,11 +29,11 @@ const Container = ({ children }) => {
           onShowSidebar={toggleSidebar}
         />
         <Box h="100%" mx={variants?.navigation === 'sidebar' && 8}>
-          {children}
+          <Container>{children}</Container>
         </Box>
       </Box>
     </Fragment>
   );
 };
 
-export default Container;
+export default Dashboard;

@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@components": ["components/index.ts"],
+      "@components/elements": ["components/elements/index.ts"],
+      "@components/layouts": ["components/layouts/index.ts"],
+      "@components/modules": ["components/modules/index.ts"],
+      "@components/templates": ["components/templates/index.ts"],
       "@theme": ["theme/index.ts"]
     },
     "target": "es5",

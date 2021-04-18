@@ -1,12 +1,12 @@
-import { Box, Center, IconButton, Text, Flex } from '@chakra-ui/react';
+import { Box, IconButton, Text, Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-interface Props {
-  onShowSidebar: Function;
+interface SidebarProps {
+  onShowSidebar: () => void;
   showSidebarButton?: boolean;
 }
 
-const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
+const Header = ({ showSidebarButton = true, onShowSidebar }: SidebarProps) => {
   return (
     <Flex
       h={!showSidebarButton ? 100 : 'unset'}
@@ -21,7 +21,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
             colorScheme="blackAlpha"
             variant="outline"
             aria-label="Toggle Sidebar"
-            onClick={() => onShowSidebar}
+            onClick={onShowSidebar}
           />
         )}
       </Box>
