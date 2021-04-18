@@ -1,5 +1,6 @@
 import { Box, IconButton, Text, Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { ProfileDropdown } from '@components/modules';
 
 interface SidebarProps {
   onShowSidebar: () => void;
@@ -11,7 +12,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: SidebarProps) => {
     <Flex
       h={!showSidebarButton ? 100 : 'unset'}
       p={4}
-      justifyContent="center"
+      justifyContent="space-between"
       align="center"
     >
       <Box mr={4}>
@@ -28,6 +29,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: SidebarProps) => {
       <Text fontSize="xl" fontWeight={700} flexGrow={1}>
         Dashboard
       </Text>
+      <ProfileDropdown />
     </Flex>
   );
 };

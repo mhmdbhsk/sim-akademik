@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 
-interface CustomHead {
-  title: string;
+interface CustomHeadProps {
+  title?: string;
 }
 
-const CustomHead = ({ title }) => {
+const CustomHead = ({ title }: CustomHeadProps) => {
   return (
     <Fragment>
       <Head>

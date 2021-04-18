@@ -1,4 +1,9 @@
-import { extendTheme, Text } from '@chakra-ui/react';
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+
+const config: Partial<ThemeConfig> = {
+  useSystemColorMode: false,
+  initialColorMode: 'light',
+};
 
 const theme = extendTheme({
   fonts: {
@@ -14,6 +19,7 @@ const theme = extendTheme({
       },
     },
   },
+  config,
 });
 
 export default theme;

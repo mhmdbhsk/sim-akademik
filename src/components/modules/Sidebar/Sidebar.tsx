@@ -9,7 +9,11 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import { SidebarContent, SidebarItem } from '@components/elements';
+import {
+  ColorModeToggle,
+  SidebarContent,
+  SidebarItem,
+} from '@components/elements';
 
 interface SidebarProps {
   onClose: () => void;
@@ -26,7 +30,6 @@ const Sidebar = ({ isOpen, variant, onClose }: SidebarProps) => {
       w={300}
       top={0}
       h="100%"
-      bg="#fff"
       boxShadow="0px 4px 16px rgba(0, 0, 0, 0.08)"
     >
       <SidebarContent>
@@ -64,8 +67,16 @@ const Sidebar = ({ isOpen, variant, onClose }: SidebarProps) => {
               <SidebarItem title="Pegawai" icon="/assets/people.svg" />
               <SidebarItem title="Jurusan" icon="/assets/loop.svg" />
               <SidebarItem title="Normatif" icon="/assets/loop.svg" />
-              <Flex w="100%" flexGrow={1} align="flex-end" py={4} m={0}>
+              <Flex
+                w="100%"
+                flexGrow={1}
+                align="flex-end"
+                py={4}
+                m={0}
+                flexDir="column"
+              >
                 <SidebarItem title="Pengaturan" icon="/assets/settings.svg" />
+                <ColorModeToggle />
               </Flex>
             </SidebarContent>
           </DrawerBody>
